@@ -826,6 +826,7 @@ public class SwipeLayout extends FrameLayout {
         }
         mIsBeingDragged = !doNothing;
     }
+
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         if (!isSwipeEnabled()) {
@@ -893,7 +894,6 @@ public class SwipeLayout extends FrameLayout {
                 sX = event.getRawX();
                 sY = event.getRawY();
 
-
             case MotionEvent.ACTION_MOVE: {
                 //the drag state and the direction are already judged at onInterceptTouchEvent
                 checkCanDrag(event);
@@ -915,6 +915,7 @@ public class SwipeLayout extends FrameLayout {
 
         return super.onTouchEvent(event) || mIsBeingDragged || action == MotionEvent.ACTION_DOWN;
     }
+
     public boolean isClickToClose() {
         return mClickToClose;
     }
